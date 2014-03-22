@@ -1,0 +1,7 @@
+parameters:
+#    pred_demande.example.class: Pred\DemandeBundle\Example
+
+services:
+#    pred_demande.example:
+#        class: %pred_demande.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

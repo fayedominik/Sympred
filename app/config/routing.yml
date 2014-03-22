@@ -1,0 +1,4 @@
+pred_demande:
+    resource: "@PredDemandeBundle/Resources/config/routing.yml"
+    prefix:   /
+
