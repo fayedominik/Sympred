@@ -1,0 +1,30 @@
+rapport:
+    pattern:  /
+    defaults: { _controller: "PredDemandeBundle:Rapport:index" }
+
+rapport_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PredDemandeBundle:Rapport:show" }
+
+rapport_new:
+    pattern:  /new
+    defaults: { _controller: "PredDemandeBundle:Rapport:new" }
+
+rapport_create:
+    pattern:  /create
+    defaults: { _controller: "PredDemandeBundle:Rapport:create" }
+    requirements: { _method: post }
+
+rapport_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PredDemandeBundle:Rapport:edit" }
+
+rapport_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PredDemandeBundle:Rapport:update" }
+    requirements: { _method: post|put }
+
+rapport_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PredDemandeBundle:Rapport:delete" }
+    requirements: { _method: post|delete }

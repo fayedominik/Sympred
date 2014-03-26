@@ -1,0 +1,30 @@
+etablissement:
+    pattern:  /
+    defaults: { _controller: "PredDemandeBundle:Etablissement:index" }
+
+etablissement_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PredDemandeBundle:Etablissement:show" }
+
+etablissement_new:
+    pattern:  /new
+    defaults: { _controller: "PredDemandeBundle:Etablissement:new" }
+
+etablissement_create:
+    pattern:  /create
+    defaults: { _controller: "PredDemandeBundle:Etablissement:create" }
+    requirements: { _method: post }
+
+etablissement_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PredDemandeBundle:Etablissement:edit" }
+
+etablissement_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PredDemandeBundle:Etablissement:update" }
+    requirements: { _method: post|put }
+
+etablissement_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PredDemandeBundle:Etablissement:delete" }
+    requirements: { _method: post|delete }

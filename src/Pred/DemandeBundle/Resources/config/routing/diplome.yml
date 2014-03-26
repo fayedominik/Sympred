@@ -1,0 +1,30 @@
+diplome:
+    pattern:  /
+    defaults: { _controller: "PredDemandeBundle:Diplome:index" }
+
+diplome_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "PredDemandeBundle:Diplome:show" }
+
+diplome_new:
+    pattern:  /new
+    defaults: { _controller: "PredDemandeBundle:Diplome:new" }
+
+diplome_create:
+    pattern:  /create
+    defaults: { _controller: "PredDemandeBundle:Diplome:create" }
+    requirements: { _method: post }
+
+diplome_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "PredDemandeBundle:Diplome:edit" }
+
+diplome_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "PredDemandeBundle:Diplome:update" }
+    requirements: { _method: post|put }
+
+diplome_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "PredDemandeBundle:Diplome:delete" }
+    requirements: { _method: post|delete }
