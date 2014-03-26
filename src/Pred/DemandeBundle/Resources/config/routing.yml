@@ -1,3 +1,3 @@
 pred_demande_homepage:
-    pattern:  /hello/{name}
+    pattern:  /pred
     defaults: { _controller: PredDemandeBundle:Default:index }

@@ -3,7 +3,6 @@
 namespace Pred\DemandeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Pred\DemandeBundle\PredDemandeBundle;
 
 /**
  * Diplome
@@ -93,10 +92,16 @@ class Diplome
     private $commission;
 
     /**
-     * on choisi l'entite diplome comme proprietaire car on aura plus tendance a recup le rapport a partir du diplome que l'inverse
+    * on choisi l'entite diplome comme proprietaire car on aura plus tendance a recup le rapport a partir du diplome que l'inverse
     * @ORM\OneToOne(targetEntity="Pred\DemandeBundle\Entity\Rapport", cascade={"persist"})
     */
     private $rapport;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Pred\DemandeBundle\Entity\Etablissement")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $etablissement;
 
     /**
      * @param mixed $rapport
@@ -353,5 +358,28 @@ class Diplome
     public function getCommission()
     {
         return $this->commission;
+    }
+
+    /**
+     * Set etablissement
+     *
+     * @param \Pred\DemandeBundle\Entity\Etablissement $etablissement
+     * @return Diplome
+     */
+    public function setEtablissement(\Pred\DemandeBundle\Entity\Etablissement $etablissement)
+    {
+        $this->etablissement = $etablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get etablissement
+     *
+     * @return \Pred\DemandeBundle\Entity\Etablissement 
+     */
+    public function getEtablissement()
+    {
+        return $this->etablissement;
     }
 }

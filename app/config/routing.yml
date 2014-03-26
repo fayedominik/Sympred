@@ -1,4 +1,20 @@
 pred_demande:
     resource: "@PredDemandeBundle/Resources/config/routing.yml"
     prefix:   /
+pred_demande_etablissement:
+        resource: "@PredDemandeBundle/Resources/config/routing/etablissement.yml"
+        prefix:   /etablissement
 
+pred_demande_diplome:
+        resource: "@PredDemandeBundle/Resources/config/routing/diplome.yml"
+        prefix:   /diplome
+
+school_login:
+    pattern: school_login
+    defaults: { _controller: PredDemandeBundle:Security:login }
+
+login_check:
+    pattern: /etablissement/login_check
+
+logout:
+    pattern: /pred

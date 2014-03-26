@@ -64,10 +64,10 @@ class Diplome extends \Pred\DemandeBundle\Entity\Diplome implements \Doctrine\OR
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'domaineFormation', 'mention', 'specialite', 'volumeHoraire', 'natureEvaluation', 'nbAnneeUniv', 'critereAdmission', 'natureDemande', 'sanctionEtudes', 'commission', 'rapport');
+            return array('__isInitialized__', 'id', 'domaineFormation', 'mention', 'specialite', 'volumeHoraire', 'natureEvaluation', 'nbAnneeUniv', 'critereAdmission', 'natureDemande', 'sanctionEtudes', 'commission', 'rapport', 'etablissement');
         }
 
-        return array('__isInitialized__', 'id', 'domaineFormation', 'mention', 'specialite', 'volumeHoraire', 'natureEvaluation', 'nbAnneeUniv', 'critereAdmission', 'natureDemande', 'sanctionEtudes', 'commission', 'rapport');
+        return array('__isInitialized__', 'id', 'domaineFormation', 'mention', 'specialite', 'volumeHoraire', 'natureEvaluation', 'nbAnneeUniv', 'critereAdmission', 'natureDemande', 'sanctionEtudes', 'commission', 'rapport', 'etablissement');
     }
 
     /**
@@ -428,6 +428,28 @@ class Diplome extends \Pred\DemandeBundle\Entity\Diplome implements \Doctrine\OR
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCommission', array());
 
         return parent::getCommission();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setEtablissement(\Pred\DemandeBundle\Entity\Etablissement $etablissement)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEtablissement', array($etablissement));
+
+        return parent::setEtablissement($etablissement);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEtablissement()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEtablissement', array());
+
+        return parent::getEtablissement();
     }
 
 }

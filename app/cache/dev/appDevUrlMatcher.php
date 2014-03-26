@@ -136,81 +136,143 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // pred_demande_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'pred_demande_homepage')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DefaultController::indexAction',));
+        if ($pathinfo === '/pred') {
+            return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pred_demande_homepage',);
         }
 
-        // _welcome
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', '_welcome');
-            }
-
-            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\WelcomeController::indexAction',  '_route' => '_welcome',);
-        }
-
-        if (0 === strpos($pathinfo, '/demo')) {
-            if (0 === strpos($pathinfo, '/demo/secured')) {
-                if (0 === strpos($pathinfo, '/demo/secured/log')) {
-                    if (0 === strpos($pathinfo, '/demo/secured/login')) {
-                        // _demo_login
-                        if ($pathinfo === '/demo/secured/login') {
-                            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',  '_route' => '_demo_login',);
-                        }
-
-                        // _security_check
-                        if ($pathinfo === '/demo/secured/login_check') {
-                            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',  '_route' => '_security_check',);
-                        }
-
-                    }
-
-                    // _demo_logout
-                    if ($pathinfo === '/demo/secured/logout') {
-                        return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::logoutAction',  '_route' => '_demo_logout',);
-                    }
-
-                }
-
-                if (0 === strpos($pathinfo, '/demo/secured/hello')) {
-                    // acme_demo_secured_hello
-                    if ($pathinfo === '/demo/secured/hello') {
-                        return array (  'name' => 'World',  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',  '_route' => 'acme_demo_secured_hello',);
-                    }
-
-                    // _demo_secured_hello
-                    if (preg_match('#^/demo/secured/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloAction',));
-                    }
-
-                    // _demo_secured_hello_admin
-                    if (0 === strpos($pathinfo, '/demo/secured/hello/admin') && preg_match('#^/demo/secured/hello/admin/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_secured_hello_admin')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::helloadminAction',));
-                    }
-
-                }
-
-            }
-
-            // _demo
-            if (rtrim($pathinfo, '/') === '/demo') {
+        if (0 === strpos($pathinfo, '/etablissement')) {
+            // etablissement
+            if (rtrim($pathinfo, '/') === '/etablissement') {
                 if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', '_demo');
+                    return $this->redirect($pathinfo.'/', 'etablissement');
                 }
 
-                return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::indexAction',  '_route' => '_demo',);
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::indexAction',  '_route' => 'etablissement',);
             }
 
-            // _demo_hello
-            if (0 === strpos($pathinfo, '/demo/hello') && preg_match('#^/demo/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => '_demo_hello')), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::helloAction',));
+            // etablissement_show
+            if (preg_match('#^/etablissement/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etablissement_show')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::showAction',));
             }
 
-            // _demo_contact
-            if ($pathinfo === '/demo/contact') {
-                return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\DemoController::contactAction',  '_route' => '_demo_contact',);
+            // etablissement_new
+            if ($pathinfo === '/etablissement/new') {
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::newAction',  '_route' => 'etablissement_new',);
             }
 
+            // etablissement_create
+            if ($pathinfo === '/etablissement/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_etablissement_create;
+                }
+
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::createAction',  '_route' => 'etablissement_create',);
+            }
+            not_etablissement_create:
+
+            // etablissement_edit
+            if (preg_match('#^/etablissement/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etablissement_edit')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::editAction',));
+            }
+
+            // etablissement_update
+            if (preg_match('#^/etablissement/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_etablissement_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etablissement_update')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::updateAction',));
+            }
+            not_etablissement_update:
+
+            // etablissement_delete
+            if (preg_match('#^/etablissement/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_etablissement_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etablissement_delete')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\EtablissementController::deleteAction',));
+            }
+            not_etablissement_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/diplome')) {
+            // diplome
+            if (rtrim($pathinfo, '/') === '/diplome') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'diplome');
+                }
+
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::indexAction',  '_route' => 'diplome',);
+            }
+
+            // diplome_show
+            if (preg_match('#^/diplome/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'diplome_show')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::showAction',));
+            }
+
+            // diplome_new
+            if ($pathinfo === '/diplome/new') {
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::newAction',  '_route' => 'diplome_new',);
+            }
+
+            // diplome_create
+            if ($pathinfo === '/diplome/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_diplome_create;
+                }
+
+                return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::createAction',  '_route' => 'diplome_create',);
+            }
+            not_diplome_create:
+
+            // diplome_edit
+            if (preg_match('#^/diplome/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'diplome_edit')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::editAction',));
+            }
+
+            // diplome_update
+            if (preg_match('#^/diplome/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_diplome_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'diplome_update')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::updateAction',));
+            }
+            not_diplome_update:
+
+            // diplome_delete
+            if (preg_match('#^/diplome/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_diplome_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'diplome_delete')), array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\DiplomeController::deleteAction',));
+            }
+            not_diplome_delete:
+
+        }
+
+        // school_login
+        if ($pathinfo === '/school_login') {
+            return array (  '_controller' => 'Pred\\DemandeBundle\\Controller\\SecurityController::loginAction',  '_route' => 'school_login',);
+        }
+
+        // login_check
+        if ($pathinfo === '/etablissement/login_check') {
+            return array('_route' => 'login_check');
+        }
+
+        // logout
+        if ($pathinfo === '/pred') {
+            return array('_route' => 'logout');
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

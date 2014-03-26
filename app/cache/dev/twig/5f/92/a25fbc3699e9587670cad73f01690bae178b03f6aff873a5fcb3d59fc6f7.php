@@ -53,6 +53,46 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/dist/img/mochaGrunge.png"), "html", null, true);
         echo "\");
         }
+
+        .nav-tabs.nav-stacked {
+            border-bottom: 0;
+        }
+
+        .nav-tabs.nav-stacked > li > a {
+            border: 1px solid #ddd;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+        }
+
+        .nav-tabs.nav-stacked > li{
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+
+        .nav-tabs.nav-stacked > li:first-child > a {
+            -webkit-border-top-right-radius: 4px;
+            border-top-right-radius: 4px;
+            -webkit-border-top-left-radius: 4px;
+            border-top-left-radius: 4px;
+            -moz-border-radius-topright: 4px;
+            -moz-border-radius-topleft: 4px;
+        }
+
+        .nav-tabs.nav-stacked > li:last-child > a {
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            -moz-border-radius-bottomright: 4px;
+            -moz-border-radius-bottomleft: 4px;
+        }
+
+        .nav-tabs.nav-stacked > li > a:hover,
+        .nav-tabs.nav-stacked > li > a:focus {
+            z-index: 2;
+            border-color: #ddd;
+        }
     </style>
 
 </head>
@@ -89,6 +129,7 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
                         <input class=\"form-control col-lg-8\" placeholder=\"Search\" type=\"text\">
                     </form>
 
+                    <div class=\"\"
                     <!--<ul class=\"nav navbar-nav navbar-right\">
                         <li><a href=\"#\">Link</a></li>
                         <li class=\"dropdown\">
@@ -115,14 +156,14 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     <div class=\"col-md-3\">
-                        <div class=\"list-group nav-tabs\">
-                            <h4 class=\"list-group-item-heading\">MENU</h4>
-                            ";
-        // line 95
+                        ";
+        // line 147
+        echo "                        <h4><span class=\"glyphicon glyphicon-list-alt\"></span> MENU</h4>
+                        ";
+        // line 148
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 105
-        echo "                        </div>
-                    </div>
+        // line 156
+        echo "                    </div>
 
                     <div class=\"col-md-9\">
                         <div class=\"panel panel-primary\" style=\"min-height: 300px;\">
@@ -131,10 +172,10 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
                             </div>
                             <div class=\"panel-body\">
                                 ";
-        // line 115
+        // line 165
         echo "                                ";
         $this->displayBlock('body', $context, $blocks);
-        // line 132
+        // line 182
         echo "                            </div>
                         </div>
                     </div>
@@ -156,9 +197,9 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     ";
-        // line 152
+        // line 202
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 155
+        // line 205
         echo "</body>
 </html>
 ";
@@ -190,25 +231,23 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
     ";
     }
 
-    // line 95
+    // line 148
     public function block_sidebar($context, array $blocks = array())
     {
-        // line 96
-        echo "                                <a href=\"\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-hand-right\"></span>
-                                    &nbsp;first link</a>
-                                <a href=\"\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-hand-right\"></span>
-                                    &nbsp;secund link</a>
-                                <a href=\"\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-hand-right\"></span>
-                                    &nbsp;third link</a>
-                                <a href=\"\" class=\"list-group-item\"><span class=\"glyphicon glyphicon-hand-right\"></span>
-                                    &nbsp;fourth link</a>
-                            ";
+        // line 149
+        echo "                        <ul class=\"nav nav-tabs nav-stacked\">
+                            <li><a href=\"\"><span style=\"color: #2c3e50;\" class=\"glyphicon glyphicon-hand-right\"></span>&nbsp; Nouvelle Tache</a></li>
+                            <li><a href=\"\"><span style=\"color: #2c3e50;\" class=\"glyphicon glyphicon-hand-right\"></span>&nbsp; Contact </a></li>
+                            <li><a href=\"\"><span style=\"color: #2c3e50;\" class=\"glyphicon glyphicon-hand-right\"></span>&nbsp; A propos </a></li>
+                            <li><a href=\"\"><span style=\"color: #2c3e50;\" class=\"glyphicon glyphicon-hand-right\"></span>&nbsp; Aide </a></li>
+                        </ul>
+                        ";
     }
 
-    // line 115
+    // line 165
     public function block_body($context, array $blocks = array())
     {
-        // line 116
+        // line 166
         echo "                                    <h3>Paragraphe 1</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -227,10 +266,10 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
                                 ";
     }
 
-    // line 152
+    // line 202
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 153
+        // line 203
         echo "        <script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bootstrap/dist/css/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/css\" ></script>
@@ -249,6 +288,6 @@ class __TwigTemplate_5f92a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59
 
     public function getDebugInfo()
     {
-        return array (  234 => 153,  231 => 152,  212 => 116,  197 => 96,  194 => 95,  184 => 12,  174 => 8,  160 => 152,  124 => 105,  127 => 28,  110 => 22,  90 => 32,  84 => 29,  76 => 17,  53 => 29,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 151,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 122,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 111,  362 => 110,  360 => 109,  355 => 106,  341 => 105,  337 => 103,  322 => 101,  314 => 99,  312 => 98,  309 => 97,  305 => 95,  298 => 91,  294 => 90,  285 => 89,  283 => 88,  278 => 86,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 77,  229 => 73,  220 => 70,  214 => 69,  177 => 9,  169 => 60,  140 => 55,  132 => 51,  128 => 49,  107 => 36,  61 => 12,  273 => 96,  269 => 94,  254 => 92,  243 => 88,  240 => 86,  238 => 85,  235 => 74,  230 => 82,  227 => 81,  224 => 71,  221 => 77,  219 => 76,  217 => 75,  208 => 68,  204 => 72,  179 => 11,  159 => 61,  143 => 56,  135 => 115,  119 => 42,  102 => 17,  71 => 19,  67 => 15,  63 => 15,  59 => 14,  38 => 18,  94 => 34,  89 => 20,  85 => 25,  75 => 17,  68 => 14,  56 => 11,  87 => 25,  21 => 2,  26 => 10,  93 => 28,  88 => 31,  78 => 26,  46 => 7,  27 => 4,  44 => 12,  31 => 4,  28 => 3,  201 => 92,  196 => 90,  183 => 82,  171 => 61,  166 => 71,  163 => 62,  158 => 67,  156 => 66,  151 => 63,  142 => 59,  138 => 132,  136 => 56,  121 => 46,  117 => 19,  105 => 18,  91 => 27,  62 => 23,  49 => 19,  24 => 1,  25 => 3,  19 => 1,  79 => 18,  72 => 16,  69 => 25,  47 => 8,  40 => 7,  37 => 6,  22 => 2,  246 => 90,  157 => 56,  145 => 46,  139 => 45,  131 => 52,  123 => 47,  120 => 20,  115 => 43,  111 => 37,  108 => 19,  101 => 32,  98 => 31,  96 => 31,  83 => 25,  74 => 14,  66 => 15,  55 => 15,  52 => 10,  50 => 10,  43 => 7,  41 => 5,  35 => 5,  32 => 7,  29 => 3,  209 => 115,  203 => 78,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 66,  176 => 64,  173 => 65,  168 => 7,  164 => 59,  162 => 155,  154 => 58,  149 => 51,  147 => 58,  144 => 49,  141 => 48,  133 => 55,  130 => 41,  125 => 44,  122 => 95,  116 => 41,  112 => 42,  109 => 34,  106 => 36,  103 => 32,  99 => 31,  95 => 28,  92 => 21,  86 => 28,  82 => 28,  80 => 19,  73 => 16,  64 => 13,  60 => 6,  57 => 12,  54 => 10,  51 => 14,  48 => 9,  45 => 17,  42 => 7,  39 => 9,  36 => 8,  33 => 3,  30 => 7,);
+        return array (  270 => 202,  251 => 166,  248 => 165,  225 => 12,  218 => 9,  215 => 8,  161 => 147,  53 => 29,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 151,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 122,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 111,  362 => 110,  360 => 109,  355 => 106,  341 => 105,  337 => 103,  322 => 101,  314 => 99,  312 => 98,  309 => 97,  305 => 95,  298 => 91,  294 => 90,  285 => 89,  283 => 88,  278 => 86,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 77,  229 => 73,  220 => 11,  214 => 69,  177 => 65,  169 => 60,  140 => 55,  132 => 51,  128 => 49,  107 => 36,  61 => 13,  273 => 203,  269 => 94,  254 => 92,  243 => 88,  240 => 86,  238 => 149,  235 => 148,  230 => 82,  227 => 81,  224 => 71,  221 => 77,  219 => 76,  217 => 75,  208 => 68,  204 => 72,  179 => 182,  159 => 61,  143 => 56,  135 => 53,  119 => 42,  102 => 32,  71 => 19,  67 => 15,  63 => 15,  59 => 14,  38 => 18,  94 => 28,  89 => 20,  85 => 25,  75 => 17,  68 => 14,  56 => 9,  87 => 25,  21 => 2,  26 => 6,  93 => 28,  88 => 6,  78 => 21,  46 => 7,  27 => 4,  44 => 12,  31 => 3,  28 => 2,  201 => 202,  196 => 90,  183 => 82,  171 => 61,  166 => 156,  163 => 62,  158 => 67,  156 => 66,  151 => 63,  142 => 59,  138 => 54,  136 => 56,  121 => 46,  117 => 44,  105 => 40,  91 => 27,  62 => 23,  49 => 19,  24 => 1,  25 => 3,  19 => 1,  79 => 18,  72 => 16,  69 => 25,  47 => 9,  40 => 8,  37 => 10,  22 => 2,  246 => 90,  157 => 56,  145 => 46,  139 => 45,  131 => 52,  123 => 47,  120 => 40,  115 => 43,  111 => 37,  108 => 36,  101 => 32,  98 => 31,  96 => 31,  83 => 25,  74 => 14,  66 => 15,  55 => 15,  52 => 21,  50 => 10,  43 => 8,  41 => 7,  35 => 5,  32 => 7,  29 => 3,  209 => 7,  203 => 205,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 66,  176 => 165,  173 => 65,  168 => 72,  164 => 148,  162 => 57,  154 => 58,  149 => 51,  147 => 58,  144 => 49,  141 => 48,  133 => 55,  130 => 41,  125 => 44,  122 => 43,  116 => 41,  112 => 42,  109 => 34,  106 => 36,  103 => 32,  99 => 31,  95 => 28,  92 => 21,  86 => 28,  82 => 22,  80 => 19,  73 => 19,  64 => 17,  60 => 6,  57 => 11,  54 => 10,  51 => 14,  48 => 13,  45 => 17,  42 => 7,  39 => 9,  36 => 8,  33 => 4,  30 => 7,);
     }
 }
