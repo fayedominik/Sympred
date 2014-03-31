@@ -20,8 +20,30 @@ class EtablissementType extends AbstractType
             ->add('email')
             ->add('username')
             ->add('password', 'password')
-            ->add('pays')
-        ;
+            ->add('pays', 'choice', array(
+                'choices' => array(
+                    'Benin' => 'Bénin',
+                    'Burkina Faso' => 'Burkina Faso',
+                    'Burundi' => 'Burundi',
+                    'Cameroun' => 'Cameroun',
+                    'Centrafrique' => 'Centrafrique',
+                    'Congo' => 'Congo',
+                    'Cote d\'ivoire' => 'Cote d\'ivoire',
+                    'Gabon' => 'Gabon',
+                    'Guinée' => 'Guinée',
+                    'Madagascar' => 'Madagascar',
+                    'Mali' => 'Mali',
+                    'Niger' => 'Niger',
+                    'Rwanda' => 'Rwanda',
+                    'Sénégal' => 'Sénégal',
+                    'Tchad' => 'Tchad',
+                    'Togo' => 'Togo',) )
+                )
+            ->add('captcha', 'captcha', array(
+                'width' => 160,
+                'height' => 50,
+                'length' => 6,) // That's all !
+            );
     }
     
     /**

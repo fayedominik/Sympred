@@ -28,7 +28,7 @@ security:
                 login_path: school_login
                 default_target_path: /pred
             logout:
-                path: logout
+                path: /etablissement/logout
                 target: /pred
 
 

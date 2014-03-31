@@ -17,4 +17,4 @@ login_check:
     pattern: /etablissement/login_check
 
 logout:
-    pattern: /pred
+    pattern: /etablissement/logout

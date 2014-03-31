@@ -3,42 +3,46 @@
 {% block title "Inscription" %}
 
 {% block body -%}
-    <div class="panel panel-default col-md-7">
-        <h4>Etablissement creation</h4>
+    <div class="panel panel-default col-md-7" style="margin-left: 20%;">
+        <h4 class="panel-heading">Etablissement creation</h4>
         <form class="form-horizontal" style="margin: 0 0 20px;" action="{{ path('etablissement_create') }}" method="post">
-            <div>
-                {{ form_label(form.nom) }}
-                {{ form_errors(form.nom) }}
-                {{ form_widget(form.nom) }}
-            </div >
-            <div>
-                {{ form_label(form.adresse) }}
-                {{ form_errors(form.adresse) }}
-                {{ form_widget(form.adresse) }}
-            </div>
-            <div>
-                {{ form_label(form.email) }}
-                {{ form_errors(form.email) }}
-                {{ form_widget(form.email) }}
-            </div>
-            <div>
-                {{ form_label(form.pays) }}
-                {{ form_errors(form.pays) }}
-                {{ form_widget(form.pays) }}
-            </div>
-            <div>
-                {{ form_label(form.username) }}
-                {{ form_errors(form.username) }}
-                {{ form_widget(form.username) }}
-            </div>
-            <div>
-                {{ form_label(form.password) }}
-                {{ form_errors(form.password) }}
-                {{ form_widget(form.password) }}
-            </div>
+            <table class="table">
+            <tr>
+                <td>{{ form_label(form.nom) }}</td>
+                <td>{{ form_errors(form.nom) }}
+                {{ form_widget(form.nom) }}</td>
+            </tr >
+            <tr>
+                <td>{{ form_label(form.adresse) }}</td>
+                <td>{{ form_errors(form.adresse) }}
+                {{ form_widget(form.adresse) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.email) }}</td>
+                <td>{{ form_errors(form.email) }}
+                {{ form_widget(form.email) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.pays) }}</td>
+                <td>{{ form_errors(form.pays) }}
+                {{ form_widget(form.pays) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.username) }}</td>
+                <td>{{ form_errors(form.username) }}
+                {{ form_widget(form.username) }}<td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.password) }}</td>
+                <td>{{ form_errors(form.password) }}
+                {{ form_widget(form.password) }}<td>
+            </tr>
+            </table>
             {#{{ form_rest(form) }}#}
+            {#<img src="{{ captcha_code }}" title="captcha"/>#}
+            {{ form_widget(form.captcha) }}
             {{ form_widget(form._token) }}
-            <input type="submit" class="btn btn-info" value="s'inscrire"><br>
+            <br/><br/><input type="submit" class="btn btn-info" value="s'inscrire"><br/>
                 {#{{ form(form) }}#}
         </form>
         <ul class="record_actions">
