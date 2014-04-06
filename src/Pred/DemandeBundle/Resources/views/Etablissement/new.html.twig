@@ -2,49 +2,49 @@
 {% extends "::layout.html.twig" %}
 {% block title "Inscription" %}
 
-{% block body -%}
-    <div class="panel panel-default col-md-7" style="margin-left: 20%;">
-        <h4 class="panel-heading">Etablissement creation</h4>
-        <form class="form-horizontal" style="margin: 0 0 20px;" action="{{ path('etablissement_create') }}" method="post">
+{% block body %}
+    <div class="panel panel-default col-md-8" style="margin-left: 10%;">
+        <h4 class="panel-heading" style="text-align: center;">Nouveau Compte Etablissement </h4>
+        <form class="form-horizontal" action="{{ path('etablissement_create') }}" method="post">
             <table class="table">
             <tr>
-                <td>{{ form_label(form.nom) }}</td>
-                <td>{{ form_errors(form.nom) }}
-                {{ form_widget(form.nom) }}</td>
+                <td>{{ form_label(form.nom, 'Nom de l\'établissement : ') }}</td>
+                <td>{{ form_widget(form.nom, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.nom) }}</td>
             </tr >
             <tr>
-                <td>{{ form_label(form.adresse) }}</td>
-                <td>{{ form_errors(form.adresse) }}
-                {{ form_widget(form.adresse) }}</td>
+                <td>{{ form_label(form.adresse, 'Adresse :') }}</td>
+                <td>{{ form_widget(form.adresse, {'attr': {'class': 'form-control'}}) }}</td>
+                <td>{{ form_errors(form.adresse) }}</td>
             </tr>
             <tr>
-                <td>{{ form_label(form.email) }}</td>
-                <td>{{ form_errors(form.email) }}
-                {{ form_widget(form.email) }}</td>
+                <td>{{ form_label(form.email, 'adresse email :') }}</td>
+                <td>{{ form_widget(form.email, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.email) }}</td>
             </tr>
             <tr>
                 <td>{{ form_label(form.pays) }}</td>
-                <td>{{ form_errors(form.pays) }}
-                {{ form_widget(form.pays) }}</td>
+                <td>{{ form_widget(form.pays, {'attr': {'class': 'form-control'}}) }}</td>
+                <td>{{ form_errors(form.pays) }}</td>
             </tr>
             <tr>
-                <td>{{ form_label(form.username) }}</td>
-                <td>{{ form_errors(form.username) }}
-                {{ form_widget(form.username) }}<td>
+                <td>{{ form_label(form.username, 'Nom d\'utilisateur: ') }}</td>
+                <td>{{ form_widget(form.username, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.username) }}</td>
             </tr>
             <tr>
-                <td>{{ form_label(form.password) }}</td>
-                <td>{{ form_errors(form.password) }}
-                {{ form_widget(form.password) }}<td>
+                <td>{{ form_label(form.password, 'Mot de passe: ') }}</td>
+                <td>{{ form_widget(form.password, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.password) }}</td>
             </tr>
             </table>
             {#{{ form_rest(form) }}#}
             {#<img src="{{ captcha_code }}" title="captcha"/>#}
             {{ form_widget(form.captcha) }}
             {{ form_widget(form._token) }}
-            <br/><br/><input type="submit" class="btn btn-info" value="s'inscrire"><br/>
+            <br/><br/><input type="submit" class="btn bt btn-success" value=" inscription "><br/>
                 {#{{ form(form) }}#}
-        </form>
+        </form><br/>
         <ul class="record_actions">
             <li>
                 <a href="{{ path('etablissement') }}">

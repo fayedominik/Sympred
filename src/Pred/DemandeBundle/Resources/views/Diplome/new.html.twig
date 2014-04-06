@@ -1,9 +1,65 @@
-{% extends '::base.html.twig' %}
+{% extends '::layout.html.twig' %}
 
-{% block body -%}
-    <h1>Diplome creation</h1>
-
-    {{ form(form) }}
+{% block body %}
+<div class="panel panel-default col-md-7" style="margin-left: 10%;">
+    <h4 class="panel-heading" style="text-align: center;">Soumission d'un Diplome</h4>
+    <form class="form-horizontal" action="{{ path('diplome_create') }}" method="post">
+        <table class="table">
+            <tr>
+                <td>{{ form_label(form.domaineFormation, 'Domaine de Formation : ') }}</td>
+                <td>{{ form_widget(form.domaineFormation, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.domaineFormation) }}</td>
+            </tr >
+            <tr>
+                <td>{{ form_label(form.mention, 'Mention :') }}</td>
+                <td>{{ form_widget(form.mention, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.mention) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.specialite, 'Spécialité :') }}</td>
+                <td>{{ form_widget(form.specialite, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.specialite) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.volumeHoraire, 'Volume Horaire :') }}</td>
+                <td>{{ form_widget(form.volumeHoraire, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.volumeHoraire) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.natureEvaluation, 'Nature de contrôle des connaissnaces') }}</td>
+                <td>{{ form_widget(form.natureEvaluation, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.natureEvaluation) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.nbAnneeUniv, 'Nombre d\'années univesitaires: ') }}</td>
+                <td>{{ form_widget(form.nbAnneeUniv, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.nbAnneeUniv) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.critereAdmission, 'Qualification pour admission dans l\'Etablissament :') }}</td>
+                <td>{{ form_widget(form.critereAdmission, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.critereAdmission) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.natureDemande, 'Nature de la Demande :') }}</td>
+                <td>{{ form_widget(form.natureDemande, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.natureDemande) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.sanctionEtudes, 'Sanction des Etudes :') }}</td>
+                <td>{{ form_widget(form.sanctionEtudes, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.sanctionEtudes) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.commission, 'Commission :') }}</td>
+                <td>{{ form_widget(form.commission, {'attr': {'class': 'form-control input-sm'}}) }}</td>
+                <td>{{ form_errors(form.commission) }}</td>
+            </tr>
+        </table>
+        {{ form_widget(form._token) }}
+         <button type="submit" class="btn bt btn-success"><span class="glyphicon glyphicon-share"></span> Soumettre</button><br/>
+    </form><br/>
+    {#{{ form(form) }}#}
 
         <ul class="record_actions">
     <li>

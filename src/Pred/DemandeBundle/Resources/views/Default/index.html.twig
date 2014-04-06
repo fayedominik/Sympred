@@ -1,4 +1,12 @@
 {% extends "::layout.html.twig" %}
     {% block body %}
-        Bonjour Dominique
+        Bonjour et Bienvenue
+        {% if is_granted("ROLE_ADMIN") %}
+            Salut {{ app.user.username }}
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <p>Casse toi</p>
+        {% endif %}
     {% endblock %}

@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      { fallback: fr_FR }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -70,3 +70,12 @@ swiftmailer:
 
 #gregwar's cpatcha bundle
 gregwar_captcha: ~
+
+#config de fos_user
+fos_user:
+    db_driver:      orm  #le type de BDD a utiliser, nous utilisons l'ORM Doctrine depuis le début
+    firewall_name:  fos_firewall
+    user_class:     Pred\UserBundle\Entity\User  #la classe de l'entite que nous allons utiliser
+    registration:
+        form:
+           type:   pred_user_registration

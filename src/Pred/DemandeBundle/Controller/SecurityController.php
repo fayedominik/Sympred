@@ -22,8 +22,6 @@
                return $this->redirect($this->generateUrl('pred_demande'));
            }*/
 
-           /*$request = Request::createFromGlobals();
-           $session = $request->getSession();*/
          $request = $this->getRequest();
          $session = $request->getSession();
 

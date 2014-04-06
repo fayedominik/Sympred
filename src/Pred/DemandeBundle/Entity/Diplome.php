@@ -104,6 +104,11 @@ class Diplome
     private $etablissement;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Pred\DemandeBundle\Entity\Evaluateur")
+     */
+        private $evaluateur;
+
+    /**
      * @param mixed $rapport
      */
     public function setRapport(Rapport $rapport = null)
@@ -381,5 +386,28 @@ class Diplome
     public function getEtablissement()
     {
         return $this->etablissement;
+    }
+
+    /**
+     * Set evaluateur
+     *
+     * @param \Pred\DemandeBundle\Entity\Evaluateur $evaluateur
+     * @return Diplome
+     */
+    public function setEvaluateur(\Pred\DemandeBundle\Entity\Evaluateur $evaluateur = null)
+    {
+        $this->evaluateur = $evaluateur;
+
+        return $this;
+    }
+
+    /**
+     * Get evaluateur
+     *
+     * @return \Pred\DemandeBundle\Entity\Evaluateur 
+     */
+    public function getEvaluateur()
+    {
+        return $this->evaluateur;
     }
 }

@@ -18,8 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Pred\DemandeBundle\PredDemandeBundle(),
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
-            //new FOS\UserBundle\FOSUserBundle(),
-
+            new FOS\UserBundle\FOSUserBundle(),
+            new Pred\UserBundle\PredUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

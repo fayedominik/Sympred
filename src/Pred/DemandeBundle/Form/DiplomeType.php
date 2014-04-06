@@ -19,14 +19,45 @@ class DiplomeType extends AbstractType
             ->add('mention')
             ->add('specialite')
             ->add('volumeHoraire')
-            ->add('natureEvaluation')
+            ->add('natureEvaluation', 'choice', array(
+                'choices' => array(
+                    'Contrôle continu' => 'Controle continu',
+                    'Examens terminaux' => 'Examens terminaux',
+                )
+            ))
             ->add('nbAnneeUniv')
             ->add('critereAdmission')
-            ->add('natureDemande')
-            ->add('sanctionEtudes')
-            ->add('commission')
-            ->add('rapport')
-            ->add('etablissement')
+            ->add('natureDemande', 'choice', array(
+                'choices' => array(
+                    'Reconnaissance' => 'Reconnaissance',
+                    'Equivalence'    => 'Equivalence',
+                    'Reconnaissance et Equivalence' => 'Reconnaissance et Equivalence',
+                )
+            ))
+            ->add('sanctionEtudes', 'choice', array(
+                'choices'      => array(
+                    'DEUG'     => 'DEUG',
+                    'LICENCE'  => 'LICENCE',
+                    'MAITRISE' => 'MAITRISE',
+                    'D.E.A.'   => 'D.E.A.',
+                    'MASTER '  => 'MASTER ',
+                    'DOCTORAT' => 'DOCTORAT',
+                    'BTS'      => 'BTS',
+                    'DUT'      => 'DUT',
+                    'INGENIEUR TRAVAUX' => 'INGENIEUR TRAVAUX',
+                    'INGENIEUR CONCEPTION' => 'INGENIEUR CONCEPTION',
+                    'DESS'     => 'DESS'
+                )))
+            ->add('commission', 'choice', array(
+                'choices' => array(
+                    'Lettres, sciences Humaines et Grandes Ecoles' => 'Lettres, sciences Humaines et Grandes Ecoles',
+                    'Droit, Sciences Economiques, Gestion et Grandes Ecoles' => 'Droit, Sciences Economiques, Gestion et Grandes Ecoles',
+                    'Sciences, Médecine et Grandes Ecoles' => 'Sciences, Médecine et Grandes Ecoles',
+                )))
+            /*->add('etablissement', 'entity', array(
+                'class' => 'PredDemandeBundle:Etablissement',
+                'property' => 'nom',
+            ))*/
         ;
     }
     

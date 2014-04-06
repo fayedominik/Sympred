@@ -5,6 +5,11 @@ security:
             encode_as_base64: false
             iterations: 1
 
+        Pred\UserBundle\Entity\User:
+            algorithm: sha1
+            encode_as_base64: false
+            iterations: 1
+
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
@@ -13,6 +18,8 @@ security:
         entity_etablissement:
             entity:
                 class: Pred\DemandeBundle\Entity\Etablissement
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
 
     firewalls:
         dev:
@@ -21,7 +28,7 @@ security:
 
         etablissement_firewall:
             pattern:  ^/etablissement
-            anonymous: false
+            anonymous: true
             provider: entity_etablissement
             form_login:
                 check_path: /etablissement/login_check
@@ -31,10 +38,21 @@ security:
                 path: /etablissement/logout
                 target: /pred
 
+        fos_firewall:
+            pattern: ^/
+            anonymous: true
+            provider: fos_userbundle
+            form_login:
+                login_path: /user/login
+                check_path: /user/login_check
+                default_target_path: /pred
+            logout:
+                path:    /user/logout
+                target:  /pred
+            remember_me:
+                key:     %secret%
 
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

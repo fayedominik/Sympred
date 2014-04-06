@@ -19,14 +19,16 @@
     <style>
         #footer {
             bottom: 0;
+            margin-left: 0;
+            margin-right: 0;
             /*width: 100%;*/
             /* Set the fixed height of the footer here */
-            height: 80px;
+            height: 90px;
             background-color: #2c3e50;
         }
 
         body {
-            background: url("{{ asset('bootstrap/dist/img/woven.png') }}");
+            background: url("{{ asset('bootstrap/dist/img/mochaGrunge.png') }}");
         }
 
         .nav-tabs.nav-stacked {
@@ -72,7 +74,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="padding-left: 0; padding-right: 0">
         <div class="container" style="background-color: #ffffff; box-shadow: 2px 3px 3px; padding: 0">
             <div class="navbar navbar-default">
                 <div class="navbar-header">
@@ -126,8 +128,8 @@
             </div>
 
             <hr style="margin: 5px; height: 2px; color: #000000"/>
-            <div class="jumbotron" style="margin-left: 8px; margin-right: 8px;" id="banner">
-                <h2>CAMES / e-PRED</h2>
+            <div class="jumbotron" id="banner">
+                <h2>e-CAMES / PRED</h2>
                 <p>Un code doit être littéraire puisque, selon le langage, les informations nécessaires ne peuvent pas toutes être
                     exprimées clairement par le seul code. </p>
                 <p><a class="btn btn-primary">En savoir plus</a></p>
@@ -151,7 +153,7 @@
                         <h4><span class="glyphicon glyphicon-list-alt"></span> MENU</h4>
                         {% block sidebar %}
                         <ul class="nav nav-tabs nav-stacked">
-                            <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp; Nouvelle Tache</a></li>
+                            <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp; Accueil</a></li>
                             <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp; Contact </a></li>
                             <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp; A propos </a></li>
                             <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp; Aide </a></li>
@@ -190,13 +192,13 @@
                 </div>
             </div>
 
-            <div id="footer" style="text-align: center;">
-                <p style="color: #ffffff; font-size: 0.8em; padding-top: 15px;"> <a href="#">&copy; 2014 CAMES</a>  | tous droits réservés <br/>
-                </p>
-                <p style="color: #ffffff; font-size: 0.8em; padding-top: 5px;">
-                    <a href=""> Cames </a>&nbsp; | &nbsp;<a href=""> Actualités </a>&nbsp; | &nbsp;<a href=""> Contact </a>&nbsp; | &nbsp;<a href="">Pays Membres</a>
-                </p>
-            </div>
+        </div>
+        <div id="footer" style="text-align: center;">
+            <p style="color: #ffffff; font-size: 0.8em; padding-top: 15px;"> <a href="#">&copy; 2014 CAMES</a>  | tous droits réservés <br/>
+            </p>
+            <p style="color: #ffffff; font-size: 0.8em; padding-top: 5px;">
+                <a href=""> Cames </a>&nbsp; | &nbsp;<a href=""> Actualités </a>&nbsp; | &nbsp;<a href=""> Contact </a>&nbsp; | &nbsp;<a href="">Pays Membres</a>
+            </p>
         </div>
     </div>
 
