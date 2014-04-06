@@ -1,0 +1,13 @@
+parameters:
+#    pred_user.example.class: Pred\UserBundle\Example
+
+services:
+#    pred_user.example:
+#        class: %pred_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    pred_user.registration.form.type:
+        class: Pred\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: pred_user_registration }

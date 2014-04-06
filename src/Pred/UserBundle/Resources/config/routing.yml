@@ -1,0 +1,3 @@
+pred_user_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PredUserBundle:Default:index }
