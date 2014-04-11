@@ -17,15 +17,15 @@ pred_demande_evaluateur:
         resource: "@PredDemandeBundle/Resources/config/routing/evaluateur.yml"
         prefix:   /evaluateur
 
-school_login:
-    pattern: school_login
-    defaults: { _controller: PredDemandeBundle:Security:login }
+#school_login:
+#    pattern: school_login
+#    defaults: { _controller: PredDemandeBundle:Security:login }
 
-login_check:
-    pattern: /etablissement/login_check
+#login_check:
+#    pattern: /etablissement/login_check
 
-logout:
-    pattern: /etablissement/logout
+#logout:
+#    pattern: /etablissement/logout
 
 
 fos_user_security:

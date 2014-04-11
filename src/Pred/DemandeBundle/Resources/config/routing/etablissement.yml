@@ -28,3 +28,7 @@ etablissement_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "PredDemandeBundle:Etablissement:delete" }
     requirements: { _method: post|delete }
+
+etablissement_home:
+    pattern: /schoolhome
+    defaults: { _controller: "PredDemandeBundle:Etablissement:schoolhome" }

@@ -1,7 +1,17 @@
 {% extends '::layout.html.twig' %}
 
+
+{% block sidebar %}
+    <ul class="nav nav-tabs nav-stacked">
+        <li><a href="{{ path('etablissement_home') }}" ><span style="color: #2c3e50;" class="glyphicon glyphicon-home"></span>&nbsp; Accueil</a></li>
+        <li><a href="{{ path('diplome_new') }}" class="active"><span style="color: #2c3e50;" class="glyphicon glyphicon-plus-sign"></span>&nbsp; Soumettre un Diplome</a></li>
+        <li><a href="{{ path('diplome') }}"><span style="color: #2c3e50;" class="glyphicon glyphicon-th-list"></span>&nbsp;Mes Diplomes </a></li>
+        <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-question-sign"></span>&nbsp; Aide </a></li>
+    </ul>
+{% endblock %}
+
 {% block body %}
-<div class="panel panel-default col-md-7" style="margin-left: 10%;">
+<div class="panel panel-default col-md-8" style="margin-left: 15%;">
     <h4 class="panel-heading" style="text-align: center;">Soumission d'un Diplome</h4>
     <form class="form-horizontal" action="{{ path('diplome_create') }}" method="post">
         <table class="table">

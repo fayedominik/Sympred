@@ -4,9 +4,9 @@ namespace Pred\DemandeBundle\Controller;
 
 use Pred\DemandeBundle\Entity\Evaluateur;
 use Pred\DemandeBundle\Form\EvaluateurType;
+
 use Pred\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -22,13 +22,14 @@ class EvaluateurController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        /*$em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('PredDemandeBundle:Evaluateur')->findAll();
 
         return $this->render('PredDemandeBundle:Evaluateur:index.html.twig', array(
             'entities' => $entities,
-        ));
+        ));*/
+        return $this->render('PredDemandeBundle:Evaluateur:index.html.twig');
     }
     /**
      * Creates a new Evaluateur entity.
@@ -55,7 +56,7 @@ class EvaluateurController extends Controller
             $user->setEmail($entity->getEmail());
             $user->setUsername($entity->getUsername());
             $user->setEnabled(true);
-            $roles = array('ROLE_ADMIN');
+            $roles = array('ROLE_EVALUATEUR');
             $user->setRoles($roles);
             $user->setProfil("evaluateur");
             $user->setEvaluateur($entity);
@@ -237,5 +238,15 @@ class EvaluateurController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    public  function listeAction(){
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('PredDemandeBundle:Evaluateur')->findAll();
+
+        return $this->render('PredDemandeBundle:Evaluateur:liste.html.twig', array(
+            'entities' => $entities,
+        ));
     }
 }

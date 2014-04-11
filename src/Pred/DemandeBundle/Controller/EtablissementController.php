@@ -4,8 +4,9 @@ namespace Pred\DemandeBundle\Controller;
 
 use Pred\DemandeBundle\Entity\Etablissement;
 use Pred\DemandeBundle\Form\EtablissementType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Pred\UserBundle\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -35,18 +36,30 @@ class EtablissementController extends Controller
      */
     public function createAction(Request $request)
     {
-        $factory = $this->get('security.encoder_factory');
         $entity = new Etablissement();
-        $encoder = $factory->getEncoder($entity);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
-            $entity->setIsActive(true);
-            $entity->setPassword($password);
             $em->persist($entity);
+            $em->flush();
+
+            //on lie cet evaluateur avec un objet user de notre table utilisateur
+            $user = new User();
+            $factory = $this->get('security.encoder_factory');
+            $encoder = $factory->getEncoder($user);
+            $password = $entity->getPassword();
+            $password = $encoder->encodePassword($password, $user->getSalt());
+            $user->setPassword($password);
+            $user->setEmail($entity->getEmail());
+            $user->setUsername($entity->getUsername());
+            $user->setEnabled(true);
+            $roles = array('ROLE_ETABLISSEMENT');
+            $user->setRoles($roles);
+            $user->setProfil("etablissement");
+            $user->setEtablissement($entity);
+            $em->persist($user);
             $em->flush();
 
             return $this->redirect($this->generateUrl('etablissement_show', array('id' => $entity->getId())));
@@ -224,5 +237,9 @@ class EtablissementController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    public function schoolhomeAction(){
+        return $this->render('PredDemandeBundle:Etablissement:schoolhome.html.twig');
     }
 }

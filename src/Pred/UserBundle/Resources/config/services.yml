@@ -1,5 +1,6 @@
 parameters:
 #    pred_user.example.class: Pred\UserBundle\Example
+    security.authentication.success_handler.class: Pred\UserBundle\Handler\LoginSuccessHandler
 
 services:
 #    pred_user.example:
@@ -11,3 +12,8 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: pred_user_registration }
+
+    security.authentication.success_handler:
+        class: %security.authentication.success_handler.class%
+        public: false
+        arguments: [@router, @security.context]

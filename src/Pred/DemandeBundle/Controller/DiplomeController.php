@@ -3,9 +3,9 @@
 namespace Pred\DemandeBundle\Controller;
 
 use Pred\DemandeBundle\Entity\Diplome;
+
 use Pred\DemandeBundle\Form\DiplomeType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -35,11 +35,26 @@ class DiplomeController extends Controller
      */
     public function createAction(Request $request)
     {
+        // On teste que l'utilisateur dispose bien du rôle ROLE_AUTEUR
+        if (!$this->get('security.context')->isGranted('ROLE_ETABLISSEMENT')) {
+        // Sinon on déclenche une exception « Accès interdit »
+            throw new AccessDeniedHttpException('Accès limité aux Etablissements');
+        }
+
         $entity = new Diplome();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        /*si le formulaire est valide, il faudra alors lier le diplome a l'etablissment qui le soumet, cela passe par la
+        recuperation de l'utilisateur courant et ensuite la recuperation de l'etab associe*/
         if ($form->isValid()) {
+            //$security = $this->get('security.context');
+            $security = $this->container->get('security.context');
+            $token = $security->getToken();
+            $user = $token->getUser();
+            $currentSchool = $user->getEtablissement();
+            //une fois l'etablissement recupere on la lie avec le diplome et on persiste
+            $entity->setEtablissement($currentSchool);
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();

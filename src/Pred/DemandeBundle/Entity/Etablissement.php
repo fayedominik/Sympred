@@ -4,7 +4,8 @@ namespace Pred\DemandeBundle\Entity;
 
 //use Symfony\Component\Security\Core\Role\Role;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Etablissement
@@ -12,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Pred\DemandeBundle\Entity\EtablissementRepository")
  */
-class Etablissement implements UserInterface, \Serializable
+class Etablissement
 {
     /**
      * @var integer
@@ -44,10 +45,10 @@ class Etablissement implements UserInterface, \Serializable
      */
     private $email;
 
-    /**
-    * @ORM\Column(name="is_active", type="boolean")
-    */
-    private $isActive;
+    ///**
+    //* @ORM\Column(name="is_active", type="boolean")
+    //*/
+    //private $isActive;
 
     /**
      * @ORM\Column(name="pays", type="string", length=50)
@@ -64,21 +65,18 @@ class Etablissement implements UserInterface, \Serializable
     */
     private $password;
 
-    /**
-    * @ORM\Column(name="salt", type="string", length=255)
-    */
-    private $salt;
+    ///**
+    //* @ORM\Column(name="salt", type="string", length=255)
+    //*/
+    //private $salt;
 
-    /**
-    * @ORM\Column(name="roles", type="array")
-    */
-    private $roles;
+   // private $roles;
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->roles = array('ROLE_USER');
         $this->salt = md5(uniqid(null, true));
-    }
+    }*/
     /**
      * Get id
      *
@@ -164,22 +162,22 @@ class Etablissement implements UserInterface, \Serializable
      * @param boolean $isActive
      * @return Etablissement
      */
-    public function setIsActive($isActive)
+    /*public function setIsActive($isActive)
     {
         $this->isActive = $isActive;
 
         return $this;
-    }
+    }*/
 
     /**
      * Get isActive
      *
      * @return boolean 
      */
-    public function getIsActive()
+   /* public function getIsActive()
     {
         return $this->isActive;
-    }
+    }*/
 
     /**
      * Set pays
@@ -249,13 +247,13 @@ class Etablissement implements UserInterface, \Serializable
      * @link http://php.net/manual/en/serializable.serialize.php
      * @return string the string representation of the object or null
      */
-    public function serialize()
+    /*public function serialize()
     {
         // TODO: Implement serialize() method.
         return serialize(array(
             $this->id,
         ));
-    }
+    }*/
 
     /**
      * (PHP 5 &gt;= 5.1.0)<br/>
@@ -266,13 +264,13 @@ class Etablissement implements UserInterface, \Serializable
      * </p>
      * @return void
      */
-    public function unserialize($serialized)
+   /* public function unserialize($serialized)
     {
         // TODO: Implement unserialize() method.
         list (
             $this->id,
             ) = unserialize($serialized);
-    }
+    }*/
 
 
     /*public function getRoles()
@@ -281,7 +279,7 @@ class Etablissement implements UserInterface, \Serializable
         return array('ROLE_USER');
     }*/
 
-    public function setSalt($salt)
+    /*public function setSalt($salt)
     {
         $this->salt = $salt;
         return $this;
@@ -299,7 +297,7 @@ class Etablissement implements UserInterface, \Serializable
     public function getRoles()
     {
         return $this->roles;
-    }
+    }*/
 
 
 
@@ -333,10 +331,10 @@ class Etablissement implements UserInterface, \Serializable
      * This is important if, at any given point, sensitive information like
      * the plain-text password is stored on this object.
      */
-    public function eraseCredentials()
+    /*public function eraseCredentials()
     {
         // TODO: Implement eraseCredentials() method.
-    }
+    }*/
 
     /**
      * @param mixed $username

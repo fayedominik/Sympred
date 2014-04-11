@@ -39,9 +39,14 @@ class User extends BaseUser
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Pred\DemandeBundle\Entity\Evaluateur")
+     * @ORM\OneToOne(targetEntity="Pred\DemandeBundle\Entity\Evaluateur")
      */
     private $evaluateur;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Pred\DemandeBundle\Entity\Etablissement")
+     */
+    private $etablissement;
 
     /**
      * Get id
@@ -74,5 +79,28 @@ class User extends BaseUser
     public function getEvaluateur()
     {
         return $this->evaluateur;
+    }
+
+    /**
+     * Set etablissement
+     *
+     * @param \Pred\DemandeBundle\Entity\Etablissement $etablissement
+     * @return User
+     */
+    public function setEtablissement(\Pred\DemandeBundle\Entity\Etablissement $etablissement = null)
+    {
+        $this->etablissement = $etablissement;
+
+        return $this;
+    }
+
+    /**
+     * Get etablissement
+     *
+     * @return \Pred\DemandeBundle\Entity\Etablissement 
+     */
+    public function getEtablissement()
+    {
+        return $this->etablissement;
     }
 }

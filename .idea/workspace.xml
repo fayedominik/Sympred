@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="973ff4f2-6a0d-4635-a0e7-af3d74e417e5" name="Default" comment="Couplage de l'entité evaluateur avec le FOSuser&#10;&#10;But: Avoir un seul formulaire d'authentification mais plusieurs types de users,chacun avec ses spécificités">
+    <list default="true" id="973ff4f2-6a0d-4635-a0e7-af3d74e417e5" name="Default" comment="Uniformisation de la connexion a la plateforme">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/UserBundle/Handler/LoginSuccessHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/evaluateur.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/liste.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/new.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/schoolhome.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/show.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/98/9d/00bc42f10d753705f9efe2b4397b40c33630222af5f480417b3d01e7f450.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/98/9d/00bc42f10d753705f9efe2b4397b40c33630222af5f480417b3d01e7f450.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/7c/20/0a219b0b3796c2ce175a8c70feab48f04a6080c975740e6051e91491084b.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/7c/20/0a219b0b3796c2ce175a8c70feab48f04a6080c975740e6051e91491084b.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/e6/14/125d7e360b8676cfa746fa67115f45c7a7e6ea5160c151b2d7be2f40c425.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/e6/14/125d7e360b8676cfa746fa67115f45c7a7e6ea5160c151b2d7be2f40c425.php" />
@@ -24,11 +32,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/64/a2/94a2bc9206e7f7e973a6c2c49e0c4399443bad4b14e6bb3569a644b7bf8d.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/64/a2/94a2bc9206e7f7e973a6c2c49e0c4399443bad4b14e6bb3569a644b7bf8d.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b0/c1/97542e60b8784e73552cc87adc29254fb2c8ba98684c58d426a15b4cee79.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/b0/c1/97542e60b8784e73552cc87adc29254fb2c8ba98684c58d426a15b4cee79.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f7/bc/9b0e82457fa7a0f4de00938a16ad9274ec09d2bd5aa169bb5f054715c7bb.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f7/bc/9b0e82457fa7a0f4de00938a16ad9274ec09d2bd5aa169bb5f054715c7bb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Diplome.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Diplome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Form/DiplomeType.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Form/DiplomeType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/SecurityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DiplomeController.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DiplomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Etablissement.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Etablissement.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EtablissementController.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EtablissementController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/EtablissementRepository.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/EtablissementRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EvaluateurController.php" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EvaluateurController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/Pred/UserBundle/Entity/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/doctrine/orm/Proxies/__CG__PredDemandeBundleEntityDiplome.php" afterPath="$PROJECT_DIR$/app/cache/prod/doctrine/orm/Proxies/__CG__PredDemandeBundleEntityDiplome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/doctrine/orm/Proxies/__CG__PredDemandeBundleEntityEtablissement.php" afterPath="$PROJECT_DIR$/app/cache/prod/doctrine/orm/Proxies/__CG__PredDemandeBundleEntityEtablissement.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/5f/92/a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59fc6f7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/5f/92/a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59fc6f7.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/twig/5f/92/a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59fc6f7.php" afterPath="$PROJECT_DIR$/app/cache/prod/twig/5f/92/a25fbc3699e9587670cad73f01690bae178b03f6aff873a5fcb3d59fc6f7.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/2e/9e/a27778ffb429879424c5a8c6ff37097c580b9858d3b309fdcfe8cc7a9705.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/2e/9e/a27778ffb429879424c5a8c6ff37097c580b9858d3b309fdcfe8cc7a9705.php" />
@@ -47,11 +59,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/appProdUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/prod/appProdUrlMatcher.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/8c/93/b5072d62dc5cbba3633dbfd0b7c741a9965faee4ff0af4a7cef40eb4ddfe.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/8c/93/b5072d62dc5cbba3633dbfd0b7c741a9965faee4ff0af4a7cef40eb4ddfe.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/9c/32/ba8e716a97b54389bc8ddb989ec4243be34caeeb438f7fd143ccc18bedc1.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/9c/32/ba8e716a97b54389bc8ddb989ec4243be34caeeb438f7fd143ccc18bedc1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/twig/9c/32/ba8e716a97b54389bc8ddb989ec4243be34caeeb438f7fd143ccc18bedc1.php" afterPath="$PROJECT_DIR$/app/cache/prod/twig/9c/32/ba8e716a97b54389bc8ddb989ec4243be34caeeb438f7fd143ccc18bedc1.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/29/84/bcab3decb2c3bfc41d7aafe2369755482ceba2164380fa4f3672e6666a11.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/29/84/bcab3decb2c3bfc41d7aafe2369755482ceba2164380fa4f3672e6666a11.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/68/cc/c10e50b383e3c511382300284538e6c3e63f871f0973a6594ec30dd201c7.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/68/cc/c10e50b383e3c511382300284538e6c3e63f871f0973a6594ec30dd201c7.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c4/e8/ccaf8ed00dc5732024437a2159af275d5ae1ac7d78fe8dadb7a10b818cde.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/c4/e8/ccaf8ed00dc5732024437a2159af275d5ae1ac7d78fe8dadb7a10b818cde.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d8/8a/cf171f4f82859f65e33f5f8a792048383901b82e50dc9e28f52e1204634c.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d8/8a/cf171f4f82859f65e33f5f8a792048383901b82e50dc9e28f52e1204634c.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.map" afterPath="$PROJECT_DIR$/app/cache/dev/classes.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/classes.map" afterPath="$PROJECT_DIR$/app/cache/prod/classes.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/f0/13/d24f098305295f47ce3d5d19b6c4a5b99ca6387808c4493d9a53a92d36c2.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/f0/13/d24f098305295f47ce3d5d19b6c4a5b99ca6387808c4493d9a53a92d36c2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/twig/f0/13/d24f098305295f47ce3d5d19b6c4a5b99ca6387808c4493d9a53a92d36c2.php" afterPath="$PROJECT_DIR$/app/cache/prod/twig/f0/13/d24f098305295f47ce3d5d19b6c4a5b99ca6387808c4493d9a53a92d36c2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/0b/17/d7e2c5707824ccce9d9b460dee6ef77e941dd87f9a457ca555a8d37b1daa.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/0b/17/d7e2c5707824ccce9d9b460dee6ef77e941dd87f9a457ca555a8d37b1daa.php" />
@@ -62,22 +76,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/1b/88/e6606c055248ad7436d14b43dce8858a709358eb0791d41eaac3d7a45b42.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/1b/88/e6606c055248ad7436d14b43dce8858a709358eb0791d41eaac3d7a45b42.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/bb/f3/e7d72da73b93fc0a8bbb2d5e52f62f3983d33b91249b579365f7c014cf14.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/bb/f3/e7d72da73b93fc0a8bbb2d5e52f62f3983d33b91249b579365f7c014cf14.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/24/b6/e84bc7114133e62786e4ebfddad1b4bd361136c2b37e47b5a37caf997219.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/24/b6/e84bc7114133e62786e4ebfddad1b4bd361136c2b37e47b5a37caf997219.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/etablissement.yml" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/etablissement.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/8c/1a/f24f243684c7009256471a09adf263de521a0b9d85d206a6174660a478f3.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/8c/1a/f24f243684c7009256471a09adf263de521a0b9d85d206a6174660a478f3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/6c/d5/f6682013b63f67195ae524134178b1c403d8815f088475910d34ee39917f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/6c/d5/f6682013b63f67195ae524134178b1c403d8815f088475910d34ee39917f.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d0/4b/f7831338681cfed5de4e3eb60045a7549a53d3b4993498d9c8fcb16d81df.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d0/4b/f7831338681cfed5de4e3eb60045a7549a53d3b4993498d9c8fcb16d81df.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/index.html.twig" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/security/login.html.twig" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/security/login.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/new.html.twig" afterPath="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/prod.log" afterPath="$PROJECT_DIR$/app/logs/prod.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Pred/UserBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/Pred/UserBundle/Resources/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/templates.php" afterPath="$PROJECT_DIR$/app/cache/dev/templates.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/prod/templates.php" afterPath="$PROJECT_DIR$/app/cache/prod/templates.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Symfony2_4.iws" />
@@ -105,92 +118,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Registration/register.html.twig">
+      <file leaf-file-name="schoolhome.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/schoolhome.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="14" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="153">
+            <state line="5" column="31" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/User.php">
+      <file leaf-file-name="DiplomeController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DiplomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="469" column="31" selection-start="9174" selection-end="9174" vertical-scroll-proportion="0.0" vertical-offset="7973" max-vertical-offset="10098">
+            <state line="8" column="10" selection-start="198" selection-end="198" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="4148">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DefaultController.php">
+      <file leaf-file-name="etablissement.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/etablissement.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="12" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="323">
+            <state line="21" column="21" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_content.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Registration/register_content.html.twig">
+      <file leaf-file-name="new.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="42" selection-start="0" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+            <state line="16" column="29" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RegistrationFormType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Form/Type/RegistrationFormType.php">
+      <file leaf-file-name="layout.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="15" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1071">
+            <state line="110" column="22" selection-start="5015" selection-end="5015" vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="3859">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/show.html.twig">
+      <file leaf-file-name="Diplome.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Diplome.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="7" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="986">
+            <state line="6" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="7140">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <file leaf-file-name="Etablissement.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Etablissement.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="918">
+            <state line="151" column="22" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="5984">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="18" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="833" max-vertical-offset="1258">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
+              <folding>
+                <marker date="1396622837577" expanded="true" signature="145:293" placeholder="..." />
+                <marker date="1396622837577" expanded="true" signature="154:250" placeholder="..." />
+                <marker date="1396622837577" expanded="true" signature="198:240" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="18" selection-start="399" selection-end="399" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="289">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/security/login.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="33" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.42461538" vertical-offset="270" max-vertical-offset="663">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EvaluateurController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EvaluateurController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="81" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="4199">
-              <folding />
+            <state line="9" column="14" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="357">
+              <folding>
+                <marker date="1396963905656" expanded="true" signature="96:618" placeholder="..." />
+                <marker date="1396963905656" expanded="true" signature="149:164" placeholder="..." />
+                <marker date="1396963905656" expanded="true" signature="281:296" placeholder="..." />
+                <marker date="1396963905656" expanded="true" signature="398:413" placeholder="..." />
+                <marker date="1396963905656" expanded="true" signature="522:537" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -204,17 +227,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s generate:bundle" />
-      <command text="Pred/UserBundle" />
-      <command text="s generate:bundle" />
-      <command text="s cache:clear" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s cache:clear" />
-      <command text="s cache:clear --env=prod" />
-      <command text="s doctrine:generate:entity" />
-      <command text="s cache:clear" />
-      <command text="s doctrine:generate:entity" />
-      <command text="s doctrine:schema:update --force" />
       <command text="s generate:doctrine:entities PredDemandeBundle:Diplome" />
       <command text="s generate:doctrine:entities PredUserBundle:User" />
       <command text="s doctrine:schema:update --force " />
@@ -229,6 +241,17 @@
       <command text="s cache:clear" />
       <command text="s router:debug " />
       <command text="s cache:clear" />
+      <command text="s cache:clear --env=prod" />
+      <command text="s doctrine:generate:entities PredDemandeBundle:Etablissement" />
+      <command text="s doctrine:generate:entities PredUserBundle:User" />
+      <command text="s doctrine:schema:update --force " />
+      <command text="s cache:clear" />
+      <command text="s cache:clear --env=prod" />
+      <command text="s cache:clear" />
+      <command text="s cache:clear --env=pro" />
+      <command text="s cache:clear --env=prod" />
+      <command text="s cache:clear" />
+      <command text="s cache:clear --env=prod" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -239,25 +262,28 @@
       <MyDateState />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
-        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Form/Type/RegistrationFormType.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Form/EvaluateurType.php" />
-        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Registration/register_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/etablissement.yml" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/liste.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/evaluateur.yml" />
         <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EvaluateurController.php" />
-        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/security/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Handler/LoginSuccessHandler.php" />
+        <option value="$PROJECT_DIR$/src/Pred/UserBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/schoolhome.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Etablissement.php" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Diplome.php" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DiplomeController.php" />
       </list>
     </option>
   </component>
@@ -381,684 +407,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Registration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Type" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Form" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="friendsofsymfony" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user-bundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FOS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Security" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Registration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="UserBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Diplome" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Symfony2_4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pred" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DemandeBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -1068,8 +416,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -1138,7 +486,15 @@
       <created>1396267932929</created>
       <updated>1396267932929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Couplage de l'entité evaluateur avec le FOSuser&#10;&#10;But: Avoir un seul formulaire d'authentification mais plusieurs types de users,chacun avec ses spécificités">
+      <created>1396785256903</created>
+      <updated>1396785256903</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Couplage de l'entité evaluateur avec le FOSuser&#10;&#10;But: Avoir un seul formulaire d'authentification mais plusieurs types de users,chacun avec ses spécificités">
+      <created>1396785572214</created>
+      <updated>1396785572214</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1177,6 +533,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31535947" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31535947" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1185,7 +542,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31535947" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -1199,113 +555,126 @@
     <MESSAGE value="Generation de crud et creation de la base de donnee.&#10;&#10;Important pour la suite qui consistera a gerer les autres Users" />
     <MESSAGE value="ajout d'un captcha au formulaire d'inscription de l'établissement&#10;utilisation d'un select pour le choix du pays." />
     <MESSAGE value="Couplage de l'entité evaluateur avec le FOSuser&#10;&#10;But: Avoir un seul formulaire d'authentification mais plusieurs types de users,chacun avec ses spécificités" />
-    <option name="LAST_COMMIT_MESSAGE" value="Couplage de l'entité evaluateur avec le FOSuser&#10;&#10;But: Avoir un seul formulaire d'authentification mais plusieurs types de users,chacun avec ses spécificités" />
+    <MESSAGE value="Uniformisation de la connexion a la plateforme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uniformisation de la connexion a la plateforme" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Form/EvaluateurType.php">
+    <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Handler/LoginSuccessHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="7" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="867" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="7" selection-start="1919" selection-end="1919" vertical-scroll-proportion="0.0" vertical-offset="884" max-vertical-offset="1411" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Registration/register.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="69" selection-start="78" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="187" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="0" selection-end="121" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="612">
+        <state line="28" column="0" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Registration/register.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="153">
-          <folding />
-        </state>
+        <state line="22" column="10" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="748" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views/Registration/register_content.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="42" selection-start="0" selection-end="42" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Form/Type/RegistrationFormType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="15" selection-start="1062" selection-end="1062" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1071">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/UserBundle/Resources/views/Registration/register_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="503" selection-end="503" vertical-scroll-proportion="-5.923077" vertical-offset="16" max-vertical-offset="595" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="304" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="469" column="31" selection-start="9174" selection-end="9174" vertical-scroll-proportion="0.0" vertical-offset="7973" max-vertical-offset="10098">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="12" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EvaluateurController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="81" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="4199">
+        <state line="101" column="38" selection-start="1944" selection-end="1962" vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="1904">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="399" selection-end="399" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="289">
+        <state line="6" column="26" selection-start="257" selection-end="257" vertical-scroll-proportion="0.2947977" vertical-offset="0" max-vertical-offset="346" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/diplome.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/EtablissementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4182">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/security/login.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/config/routing/etablissement.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="33" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.42461538" vertical-offset="270" max-vertical-offset="663">
+        <state line="21" column="21" selection-start="617" selection-end="617" vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Diplome/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="29" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
+          <folding>
+            <marker date="1396622837577" expanded="true" signature="145:293" placeholder="..." />
+            <marker date="1396622837577" expanded="true" signature="154:250" placeholder="..." />
+            <marker date="1396622837577" expanded="true" signature="198:240" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Evaluateur/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="14" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="357">
+          <folding>
+            <marker date="1396963905656" expanded="true" signature="96:618" placeholder="..." />
+            <marker date="1396963905656" expanded="true" signature="149:164" placeholder="..." />
+            <marker date="1396963905656" expanded="true" signature="281:296" placeholder="..." />
+            <marker date="1396963905656" expanded="true" signature="398:413" placeholder="..." />
+            <marker date="1396963905656" expanded="true" signature="522:537" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Resources/views/Etablissement/schoolhome.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="31" selection-start="89" selection-end="89" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="22" selection-start="5015" selection-end="5015" vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="3859">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Etablissement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="151" column="22" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="5984">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Entity/Diplome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="7140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="18" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pred/DemandeBundle/Controller/DiplomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="10" selection-start="198" selection-end="198" vertical-scroll-proportion="0.40236688" vertical-offset="0" max-vertical-offset="4148">
           <folding />
         </state>
       </provider>

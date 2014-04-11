@@ -1,21 +1,21 @@
-{% extends '::base.html.twig' %}
+{% extends '::layout.html.twig' %}
 
 {% block body -%}
     <h1>Diplome list</h1>
 
-    <table class="records_list">
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Id</th>
+                {#<th>Id</th>#}
                 <th>Domaineformation</th>
                 <th>Mention</th>
                 <th>Specialite</th>
-                <th>Volumehoraire</th>
-                <th>Natureevaluation</th>
-                <th>Nbanneeuniv</th>
+                {#<th>Volumehoraire</th>#}
+                {#<th>Natureevaluation</th>#}
+                {#<th>Nbanneeuniv</th>#}
                 <th>Critereadmission</th>
                 <th>Naturedemande</th>
-                <th>Sanctionetudes</th>
+                {#<th>Sanctionetudes</th>#}
                 <th>Commission</th>
                 <th>Actions</th>
             </tr>
@@ -23,16 +23,16 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('diplome_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                {#<td><a href="{{ path('diplome_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>#}
                 <td>{{ entity.domaineFormation }}</td>
                 <td>{{ entity.mention }}</td>
                 <td>{{ entity.specialite }}</td>
-                <td>{{ entity.volumeHoraire }}</td>
-                <td>{{ entity.natureEvaluation }}</td>
-                <td>{{ entity.nbAnneeUniv }}</td>
+                {#<td>{{ entity.volumeHoraire }}</td>#}
+                {#<td>{{ entity.natureEvaluation }}</td>
+                <td>{{ entity.nbAnneeUniv }}</td>#}
                 <td>{{ entity.critereAdmission }}</td>
                 <td>{{ entity.natureDemande }}</td>
-                <td>{{ entity.sanctionEtudes }}</td>
+               {# <td>{{ entity.sanctionEtudes }}</td>#}
                 <td>{{ entity.commission }}</td>
                 <td>
                 <ul>

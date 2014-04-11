@@ -1,0 +1,15 @@
+{% extends '::layout.html.twig' %}
+
+{% block sidebar %}
+    <ul class="nav nav-tabs nav-stacked">
+        <li><a href="" class="active"><span style="color: #2c3e50;" class="glyphicon glyphicon-hand-right"></span>&nbsp;Espace évaluateur</a></li>
+        <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-user"></span>&nbsp; Profil </a></li>
+        <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-info-sign"></span>&nbsp; A propos </a></li>
+        <li><a href=""><span style="color: #2c3e50;" class="glyphicon glyphicon-question-sign"></span>&nbsp; Aide </a></li>
+    </ul>
+{% endblock %}
+
+{% block body -%}
+    Bonjour {{ app.user.username }}
+    <p>Bienvenue dans l'espace réservé aux évaluateurs</p>
+{% endblock %}

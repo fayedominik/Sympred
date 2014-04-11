@@ -3,6 +3,8 @@
 namespace Pred\DemandeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Diplome
@@ -58,7 +60,6 @@ class Diplome
 
     /**
      * @var integer
-     *
      * @ORM\Column(name="nbAnneeUniv", type="integer")
      */
     private $nbAnneeUniv;
